@@ -1,0 +1,28 @@
+﻿$width-base: 100;
+
+$small-width: $width-base +px;
+
+$medium-width: $width-base *2 + px;
+
+$larg-width: $width-base *3 +px;
+
+$x-larg-width: $width-base *4 +px;
+
+.width--small {
+    width: $small-width;
+}
+
+.width--medium {
+    width: $medium-width;
+}
+
+.width--larg {
+    width: $larg-width;
+}
+
+.width--x-larg {
+    width: $x-larg-width;
+}
+.width--full{
+    width:100%;
+}

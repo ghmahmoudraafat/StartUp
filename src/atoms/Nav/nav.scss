@@ -1,0 +1,75 @@
+﻿
+
+
+
+.navigation {
+
+
+    ul {
+        list-style: none;
+
+        > li {
+            display: inline-block;
+            position: relative;
+
+            li, a {
+                display: block;
+            }
+        }
+
+        ul {
+            width: 320px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+
+
+        &:hover {
+        }
+    }
+}
+
+/*.navigation ul:before,
+.navigation ul:after {
+    content: "";
+    display: table;
+}
+
+.navigation ul:after {
+    clear: both;
+}*/
+
+
+
+
+ 
+
+/* Fade In and Out
+============================== */
+.fade-in {
+
+    ul > li:hover ul {
+        visibility: visible;
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+
+    li ul {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 1;
+        visibility: hidden;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        -webkit-transition: 500ms ease;
+        -moz-transition: 500ms ease;
+        -o-transition: 500ms ease;
+        transition: 500ms ease;
+    }
+}
+
+
+ 

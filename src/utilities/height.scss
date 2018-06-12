@@ -1,0 +1,22 @@
+﻿$height-base: 50;
+
+$small-height: $height-base +px;
+
+$medium-height: $height-base *2 + px;
+
+$larg-height: $height-base *3 +px;
+
+$x-larg-height: $height-base *4 +px;
+
+.height--s {
+    height: $small-height;
+}
+.height--m {
+    height: $medium-height;
+}
+.height--l {
+    height: $larg-height;
+}
+.height--xl {
+    height: $x-larg-height;
+}

@@ -1,0 +1,170 @@
+﻿@import "../utilities/measurements";
+
+
+
+.navigation {
+
+
+    ul {
+        list-style: none;
+
+        > li {
+            display: inline-block;
+            position: relative;
+
+            li ,a{
+                display: block;
+            }
+        }
+
+        ul {
+            width: 320px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+
+
+        &:hover {
+        }
+    }
+
+
+    &.--small {
+        a {
+            padding: $small;
+        }
+    }
+
+    &.--medium {
+        a {
+            padding: $medium;
+        }
+    }
+
+    &.--larg {
+        a {
+            padding: $larg;
+        }
+    }
+
+    &.--x-larg {
+        a {
+            padding: $x-larg;
+        }
+    }
+
+
+
+    .--small {
+        a {
+            padding: $small !important;
+        }
+    }
+
+
+    .--medium {
+        a {
+            padding: $medium !important;
+        }
+    }
+
+
+    .--larg {
+        a {
+            padding: $larg !important;
+        }
+    }
+
+
+    .--x-larg {
+        a {
+            padding: $x-larg !important;
+        }
+    }
+}
+
+/*.navigation ul:before,
+.navigation ul:after {
+    content: "";
+    display: table;
+}
+
+.navigation ul:after {
+    clear: both;
+}*/
+
+
+
+
+
+
+/* Not Animated
+============================== */
+.not-animated {
+
+    ul > li:hover ul {
+        right: 0;
+    }
+
+
+    li ul {
+        position: absolute;
+        right: -9999em;
+        top: 36px;
+        z-index: 1;
+    }
+}
+
+/* Fade In and Out
+============================== */
+.fade-in {
+
+    ul > li:hover ul {
+        visibility: visible;
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+
+    li ul {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 1;
+        visibility: hidden;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        -webkit-transition: 500ms ease;
+        -moz-transition: 500ms ease;
+        -o-transition: 500ms ease;
+        transition: 500ms ease;
+    }
+}
+
+
+
+
+/* Fold Out
+============================== */
+.fold-out {
+    ul > li:hover ul {
+        max-height: 1000px;
+        -webkit-transform: perspective(400) rotate3d(0, 0, 0, 0);
+    }
+
+    li ul {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 1;
+        max-height: 0;
+        overflow: hidden;
+        -webkit-transform: perspective(400) rotate3d(1, 0, 0, -90deg);
+        -webkit-transform-origin: 50% 0;
+        -webkit-transition: 350ms;
+        -moz-transition: 350ms;
+        -o-transition: 350ms;
+        transition: 350ms;
+    }
+}

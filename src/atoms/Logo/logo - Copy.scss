@@ -1,0 +1,41 @@
+﻿
+
+.logo {
+    display: inline-block;
+
+    &.height--s,
+    &.height--m,
+    &.height--l,
+    &.height--xl {
+        img {
+            height: 100%;
+        }
+    }
+    // img {
+    //     height: 100%;
+    //}
+    // img {
+    //    width: 100%;
+    //   height: 100%;
+    //}
+    //    &.--small.--rect {
+    //      width: $medium;
+    // }
+    //    &.--medium {
+    //       height: $medium;
+    //   }
+    //    &.--medium.--rect {
+    //      height: $medium;
+    //    width: $larg;
+    // }
+    //&.--meras {
+    //   background-image: url('../../src/atoms/Logo/images/meras.svg');
+    //  width: 118px;
+    // height: 50px;
+    // }
+    //    &.--mci {
+    //      background-image: url('../../src/atoms/Logo/images/mci.svg');
+    //    width: 250px;
+    //   height: 63px;
+    //}
+}

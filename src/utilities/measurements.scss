@@ -1,0 +1,11 @@
+﻿// using in padding and margins
+$measurements-base: 8;
+
+$small:             $measurements-base +px;
+
+$medium:            $measurements-base *2 + px;
+
+$larg:              $measurements-base *3 +px;
+
+$x-larg:            $measurements-base *4 +px;
+ 

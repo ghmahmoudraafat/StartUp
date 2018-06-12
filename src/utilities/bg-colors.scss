@@ -1,0 +1,31 @@
+﻿@import "colors";
+
+.bg {
+    &.green {
+        color: $green;
+    }
+
+    &.blue {
+        color: $blue;
+    }
+
+    &.red {
+        color: $red;
+    }
+
+    &.orange {
+        color: $orange;
+    }
+
+    &.black {
+        color: $black;
+    }
+
+    &.grey {
+        color: $grey;
+    }
+
+    &.white {
+        color: $white;
+    }
+}
