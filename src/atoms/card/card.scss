@@ -1,0 +1,82 @@
+﻿$list-font-size :( title-: 20px, time: 14px, desc: 16px);
+$list-color :( title: #56a860, time: #999, desc: #000);
+$left:left;
+$right:right;
+body {
+    direction: rtl
+}
+
+.card {
+    &.flex {
+        display: flex;
+    }
+    &.wrap {
+        flex-wrap: wrap;
+        @media (max-width: 575.98px) {
+            flex-wrap: inherit;
+        }
+    }
+    &.horizontal {
+        flex-direction: row;
+    }
+    &.vertical {
+        flex-direction: column; // .image-wrap {
+        //     img {}
+        // }
+        // .title-wrap {}
+        // time {}
+        // .desc {}
+    }
+    &.list {
+        .image-wrap {
+            -webkit-flex-grow: 1;
+            flex-grow: 1;
+            -webkit-flex-shrink: 1; 
+            flex-shrink: 1;
+            -webkit-flex-basis: 0;
+            flex-basis: 0;
+            
+            margin-#{$left}: 15px;
+            img {
+                width: 100%;
+            }
+            @media (max-width: 575.98px) {
+                margin-#{$left}: 0;
+                margin-bottom: 15px;
+            }
+        }
+        .wrapper {
+            -webkit-flex-grow: 3;
+            flex-grow: 3;
+            -webkit-flex-shrink: 3; 
+            flex-shrink: 3;
+            -webkit-flex-basis: 0;
+            flex-basis: 0;
+            
+            // incase description is out of "wrapper"
+            + .desc{
+                margin-top: auto;
+                flex-basis: 100%;
+            }
+            @media (max-width: 575.98px) {
+              
+            }
+        }
+        .title-wrap {
+            font-size: map-get($list-font-size, title);
+            color: map-get($list-color, title);
+        }
+        time {
+            font-size: map-get($list-font-size, time);
+            color: map-get($list-color, time);
+        }
+        .desc {
+            font-size: map-get($list-font-size, desc);
+            color: map-get($list-color, desc);
+          
+        }
+        @media (max-width: 575.98px) {
+            flex-direction: column;
+        }
+    }
+}
