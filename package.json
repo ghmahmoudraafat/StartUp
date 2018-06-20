@@ -24,7 +24,5 @@
     "gulp-sass": "^4.0.1",
     "yargs": "^11.0.0"
   },
-  "dependencies": {
-    
-  }
+  "dependencies": {}
 }

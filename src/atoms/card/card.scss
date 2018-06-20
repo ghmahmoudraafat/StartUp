@@ -1,5 +1,8 @@
 ﻿$list-font-size :( title-: 20px, time: 14px, desc: 16px);
 $list-color :( title: #56a860, time: #999, desc: #000);
+$block-font-size :( title-: 20px, time: 14px, desc: 16px);
+$block-color :( title: #56a860, time: #999, desc: #000);
+$image-gradient :( color: #000, opacity:0.6, display:none);
 $left:left;
 $right:right;
 body {
@@ -27,19 +30,33 @@ body {
         // time {}
         // .desc {}
     }
+    .image-wrap {
+        position: relative;
+        img {
+            width: 100%;
+            display: block;
+        }
+        &:after {
+            content: '';
+            height: 100%;
+            width: 100%;
+            display: map-get($image-gradient, display);
+            position: absolute;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(map-get($image-gradient, color), map-get($image-gradient, opacity)) 100%);
+            top: 0;
+            $left: 0;
+        }
+    }
     &.list {
         .image-wrap {
             -webkit-flex-grow: 1;
             flex-grow: 1;
-            -webkit-flex-shrink: 1; 
+            -webkit-flex-shrink: 1;
             flex-shrink: 1;
             -webkit-flex-basis: 0;
             flex-basis: 0;
-            
             margin-#{$left}: 15px;
-            img {
-                width: 100%;
-            }
+           
             @media (max-width: 575.98px) {
                 margin-#{$left}: 0;
                 margin-bottom: 15px;
@@ -48,19 +65,15 @@ body {
         .wrapper {
             -webkit-flex-grow: 3;
             flex-grow: 3;
-            -webkit-flex-shrink: 3; 
+            -webkit-flex-shrink: 3;
             flex-shrink: 3;
             -webkit-flex-basis: 0;
-            flex-basis: 0;
-            
-            // incase description is out of "wrapper"
-            + .desc{
+            flex-basis: 0; // incase description is out of "wrapper"
+            +.desc {
                 margin-top: auto;
                 flex-basis: 100%;
             }
-            @media (max-width: 575.98px) {
-              
-            }
+            @media (max-width: 575.98px) {}
         }
         .title-wrap {
             font-size: map-get($list-font-size, title);
@@ -73,10 +86,31 @@ body {
         .desc {
             font-size: map-get($list-font-size, desc);
             color: map-get($list-color, desc);
-          
         }
         @media (max-width: 575.98px) {
             flex-direction: column;
+        }
+    }
+    &.block {
+        &.hasflying-wrapper {
+            position: relative;
+            .wrapper {
+                position: absolute;
+                bottom: 0;
+                padding: 10px 15px;
+            }
+        }
+        .title-wrap {
+            font-size: map-get($block-font-size, title);
+            color: map-get($block-color, title);
+        }
+        time {
+            font-size: map-get($block-font-size, time);
+            color: map-get($block-color, time);
+        }
+        .desc {
+            font-size: map-get($block-font-size, desc);
+            color: map-get($block-color, desc);
         }
     }
 }

@@ -16,16 +16,28 @@ body {
 .card.vertical {
   flex-direction: column; }
 
+.card .image-wrap {
+  position: relative; }
+  .card .image-wrap img {
+    width: 100%;
+    display: block; }
+  .card .image-wrap:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.6) 100%);
+    top: 0; }
+
 .card.list .image-wrap {
   -webkit-flex-grow: 1;
   flex-grow: 1;
-  -webkit-flex-basis: 0;
-  flex-basis: 0;
   -webkit-flex-shrink: 1;
   flex-shrink: 1;
+  -webkit-flex-basis: 0;
+  flex-basis: 0;
   margin-left: 15px; }
-  .card.list .image-wrap img {
-    width: 100%; }
   @media (max-width: 575.98px) {
     .card.list .image-wrap {
       margin-left: 0;
@@ -34,10 +46,10 @@ body {
 .card.list .wrapper {
   -webkit-flex-grow: 3;
   flex-grow: 3;
-  -webkit-flex-basis: 0;
-  flex-basis: 0;
   -webkit-flex-shrink: 3;
-  flex-shrink: 3; }
+  flex-shrink: 3;
+  -webkit-flex-basis: 0;
+  flex-basis: 0; }
   .card.list .wrapper + .desc {
     margin-top: auto;
     flex-basis: 100%; }
@@ -56,3 +68,21 @@ body {
 @media (max-width: 575.98px) {
   .card.list {
     flex-direction: column; } }
+
+.card.block.hasflying-wrapper {
+  position: relative; }
+  .card.block.hasflying-wrapper .wrapper {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 15px; }
+
+.card.block .title-wrap {
+  color: #56a860; }
+
+.card.block time {
+  font-size: 14px;
+  color: #999; }
+
+.card.block .desc {
+  font-size: 16px;
+  color: #000; }

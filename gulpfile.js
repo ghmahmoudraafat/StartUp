@@ -14,7 +14,7 @@ gulp.task('utilToCss', function () {
         .pipe(gulp.dest('res/css'));
 });
 
-
+///// Atoms
 gulp.task('atomToCss', function () {
     var atomName = args.atomName ;
     var src = (atomName) ?  'src/atoms/' + atomName + '/' + atomName + '.scss' : 'src/atoms/atoms.scss';
@@ -27,20 +27,5 @@ gulp.task('atomToCss', function () {
 });
 
 //////////////////
-///// Atoms
-gulp.task('nav', function () {
-    return gulp.src([
-        'src/atoms/nav/nav.scss'
-    ])
 
-        .pipe(sass()) // Converts Sass to CSS with gulp-sass
-        .pipe(gulp.dest('res/atoms/css'));
-});
-gulp.task('notification', function () {
-    return gulp.src([
-        'src/atoms/Notification/notification.scss'
-    ])
 
-        .pipe(sass()) // Converts Sass to CSS with gulp-sass
-        .pipe(gulp.dest('res/atoms/css'));
-});
