@@ -1,8 +1,8 @@
-﻿$list-font-size :( title-: 20px, time: 14px, desc: 16px);
-$list-color :( title: #56a860, time: #999, desc: #000);
-$block-font-size :( title-: 20px, time: 14px, desc: 16px);
-$block-color :( title: #56a860, time: #999, desc: #000);
-$image-gradient :( color: #000, opacity:0.6, display:none);
+﻿// $list-font-size :( title-: 20px, time: 14px, desc: 16px);
+// $list-color :( title: #56a860, time: #999, desc: #000);
+// $block-font-size :( title-: 20px, time: 14px, desc: 16px);
+// $block-color :( title: #56a860, time: #999, desc: #000);
+// $image-gradient :( color: #000, opacity:0.6, display:none);
 $left:left;
 $right:right;
 body {
@@ -40,9 +40,9 @@ body {
             content: '';
             height: 100%;
             width: 100%;
-            display: map-get($image-gradient, display);
+            display: block;
             position: absolute;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(map-get($image-gradient, color), map-get($image-gradient, opacity)) 100%);
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(#000, 0.5) 100%);
             top: 0;
             $left: 0;
         }
@@ -56,7 +56,6 @@ body {
             -webkit-flex-basis: 0;
             flex-basis: 0;
             margin-#{$left}: 15px;
-           
             @media (max-width: 575.98px) {
                 margin-#{$left}: 0;
                 margin-bottom: 15px;
@@ -75,45 +74,55 @@ body {
             }
             @media (max-width: 575.98px) {}
         }
-        .title-wrap {
-            font-size: map-get($list-font-size, title);
-            color: map-get($list-color, title);
-        }
-        time {
-            font-size: map-get($list-font-size, time);
-            color: map-get($list-color, time);
-        }
-        .desc {
-            font-size: map-get($list-font-size, desc);
-            color: map-get($list-color, desc);
-        }
+        .title-wrap {}
+        time {}
+        .desc {}
         @media (max-width: 575.98px) {
             flex-direction: column;
         }
     }
     &.block {
-        &.hasflying-title {
-            position: relative;
-            .wrapper {
-                position: absolute;
-                bottom: 0;
-                padding: 10px 15px;
+        .title-wrap {}
+        time {}
+        .desc {}
+    }
+    &.banner {
+        position: relative;
+        .wrapper {
+            position: absolute;
+            bottom: 0;
+            padding: 10px 15px;
+        }
+        .title-wrap {}
+        time {}
+        .desc {}
+    }
+    &.icon {
+       
+        &.center {
+            text-align: center;
+            .image-wrap {
+                margin-bottom: 15px;
             }
         }
-        .title-wrap {
-            font-size: map-get($block-font-size, title);
-            color: map-get($block-color, title);
+        &.right {
+            display: flex;
+            align-items: center;
+            .image-wrap {
+                margin-#{$left}: 15px;
+            }
+            .wrapper {
+                // incase description is out of "wrapper"
+                +.desc {
+                    margin-top: auto;
+                    flex-basis: 100%;
+                }
+            }
         }
-        time {
-            font-size: map-get($block-font-size, time);
-            color: map-get($block-color, time);
-        }
-        .desc {
-            font-size: map-get($block-font-size, desc);
-            color: map-get($block-color, desc);
+        .image-wrap {
+            &:after {
+                display: none;
+            }
         }
     }
-    &.icon{
-        
-    } 
 }
