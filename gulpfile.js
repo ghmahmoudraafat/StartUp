@@ -6,9 +6,9 @@ var args = require('yargs').argv;
 
 
 gulp.task('utilToCss', function () {
-    var utilName = args.utilName || 'utilities';
+    var name = args.name || 'utilities';
     return gulp.src([
-        'src/utilities/' + utilName + '.scss'
+        'src/utilities/' + name + '.scss'
     ])
         .pipe(sass()) // Converts Sass to CSS with gulp-sass
         .pipe(gulp.dest('res/css'));
@@ -16,11 +16,8 @@ gulp.task('utilToCss', function () {
 
 ///// Atoms
 gulp.task('atomToCss', function () {
-    var atomName = args.atomName ;
-    var src = (atomName) ?  'src/atoms/' + atomName + '/' + atomName + '.scss' : 'src/atoms/atoms.scss';
-     
-        
-    
+    var name = args.name ;
+    var src = (name) ?  'src/atoms/' + name + '/' + name + '.scss' : 'src/atoms/atoms.scss';
     return gulp.src([src])
         .pipe(sass()) // Converts Sass to CSS with gulp-sass
         .pipe(gulp.dest('res/css'));

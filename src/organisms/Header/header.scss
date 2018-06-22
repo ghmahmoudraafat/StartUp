@@ -1,8 +1,58 @@
-﻿@import "../utilities/utilities.scss";
-@import "../../atoms/Nav/nav";
-@import "../../atoms/Logo/logo";
-
-
-.main-header{
-
+﻿.main-header {
+    display: flex;
+    .logo-sec{
+        flex-grow:1;
+        flex-shrink: 1;
+    }
+    .nav-sec{
+        flex-grow:1;
+        flex-shrink: 1;
+    }
+    .last-sec{
+        flex-grow:1;
+        flex-shrink: 1;
+    }
+    .logo {
+        display: inline-block;
+    }
+    .navigation {
+        ul {
+            list-style: none;
+            >li {
+                display: inline-block;
+                position: relative;
+                li,
+                a {
+                    display: block;
+                }
+            }
+            ul {
+                width: 320px;
+            }
+        }
+        a {
+            text-decoration: none;
+            &:hover {}
+        }
+    }
+    .fade-in {
+        ul>li:hover ul {
+            visibility: visible;
+            opacity: 1;
+            filter: alpha(opacity=100);
+        }
+        li ul {
+            position: absolute;
+            right: 0;
+            top: 100%;
+            z-index: 1;
+            visibility: hidden;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -webkit-transition: 500ms ease;
+            -moz-transition: 500ms ease;
+            -o-transition: 500ms ease;
+            transition: 500ms ease;
+        }
+    }
 }
