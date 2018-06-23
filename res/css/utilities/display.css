@@ -1,0 +1,17 @@
+.display.none {
+  display: none; }
+
+.display.table {
+  display: table; }
+
+.display.flex {
+  display: flex; }
+
+.display.inline {
+  display: inline; }
+
+.display.block {
+  display: block; }
+
+.display.inline-block {
+  display: inline-block; }

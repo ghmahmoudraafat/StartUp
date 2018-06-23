@@ -2,32 +2,26 @@
 
 
 
-.navigation {
-
-
+ .navigation {
     ul {
         list-style: none;
-
-        > li {
+        // first level
+        >li {
             display: inline-block;
             position: relative;
-
-            li, a {
+        } 
+        // second level
+        ul {
+            width: 320px;
+            li,
+            a {
                 display: block;
             }
         }
-
-        ul {
-            width: 320px;
-        }
     }
-
     a {
         text-decoration: none;
-
-
-        &:hover {
-        }
+        &:hover {}
     }
 }
  

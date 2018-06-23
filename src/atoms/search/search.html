@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            text-align: right;
+            direction: rtl;
+        }
+    </style>
+    <link href="../../../res/css/atoms/search/search.css" rel="stylesheet" />
+</head>
+
+<body>
+
+
+    <div class="search-wrap  ">
+        <!-- Colose button -->
+        <i class="fa fa-search"></i>
+        <div class="close">
+                <i class="fas fa-times"></i>
+        </div>
+
+        <!-- search field  -->
+        <div class="search">
+            <input type="text" class="input" placeholder="البحث ...">
+        </div>
+    </div>
+    <script>
+        var search_button = $('.fa-search'),
+            close_button = $('.close'),
+            search_wrap = $('.search'),
+            input = $('.input');
+        search_button.on('click', function () {
+            search_wrap.addClass('open');
+            close_button.fadeIn(500);
+            input.fadeIn(500);
+        });
+
+        close_button.on('click', function () {
+            search_wrap.removeClass('open');
+            close_button.fadeOut(500);
+            input.fadeOut(500);
+        });
+    </script>
+</body>
+
+</html>

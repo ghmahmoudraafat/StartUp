@@ -25,4 +25,10 @@ gulp.task('atomToCss', function () {
 
 //////////////////
 
-
+gulp.task('sass', function () {
+    var name = args.name ;
+    var src = (name) ?  'src/**/**/' + name + '.scss' : 'src/atoms/atoms.scss';
+    return gulp.src([src])
+        .pipe(sass()) // Converts Sass to CSS with gulp-sass
+        .pipe(gulp.dest('res/css'));
+});
