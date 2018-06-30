@@ -1,0 +1,31 @@
+.navigation ul {
+  list-style: none; }
+  .navigation ul > li {
+    display: inline-block;
+    position: relative; }
+  .navigation ul ul {
+    width: 320px; }
+    .navigation ul ul li,
+    .navigation ul ul a {
+      display: block; }
+
+.navigation a {
+  text-decoration: none; }
+
+.fade-in ul > li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  filter: alpha(opacity=100); }
+
+.fade-in li ul {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: 500ms ease;
+  -moz-transition: 500ms ease;
+  -o-transition: 500ms ease;
+  transition: 500ms ease; }

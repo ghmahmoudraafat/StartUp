@@ -1,38 +1,54 @@
-﻿
-
-
-
- .navigation {
+﻿.navigation {
     ul {
-        list-style: none;
-        // first level
-        >li {
+        list-style: none; // first level
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0px;
+        li {
             display: inline-block;
             position: relative;
+            a {
+                text-decoration: none;
+                
+                &:hover {
+
+                }
+            }
+        }
+    }
+    >ul {
+      
+        >li {
+            //margin-#{$left}: 15px;
+            //padding: 15px;
+            > a {
+               // to solve "sub menu hide when there is gap between li and submenu
+               //padding-bottom: 100%;
+            }
         } 
         // second level
         ul {
-            width: 320px;
+            width: 250px;
             li,
             a {
                 display: block;
             }
+            li{
+                a{
+
+                }
+            }
         }
     }
-    a {
-        text-decoration: none;
-        &:hover {}
-    }
+   
 }
- 
-.fade-in {
 
-    ul > li:hover ul {
+.fade-in {
+    ul>li:hover ul {
         visibility: visible;
         opacity: 1;
         filter: alpha(opacity=100);
     }
-
     li ul {
         position: absolute;
         right: 0;
@@ -47,6 +63,3 @@
         transition: 500ms ease;
     }
 }
-
-
- 
